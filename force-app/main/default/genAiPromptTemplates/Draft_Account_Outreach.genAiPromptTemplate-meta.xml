@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionIdentifier>Jkl9wl2fPDDEdG0kyx1e8XdqXhu0FaqaCCe+KMlU5Xo=_1</activeVersionIdentifier>
+    <description>Flex template that drafts a personalized outreach email by combining an Account record input with a free-text outreach goal.</description>
+    <developerName>Draft_Account_Outreach</developerName>
+    <masterLabel>Draft Account Outreach</masterLabel>
+    <overridable>false</overridable>
+    <templateVersions>
+        <content>You are an expert B2B sales development assistant. Using the account context and the rep&apos;s stated goal below, write a concise, professional outreach email (no more than 150 words).
+
+Account context:
+- Name: {!$Input:Account.Name}
+- Industry: {!$Input:Account.Industry}
+- Type: {!$Input:Account.Type}
+- Website: {!$Input:Account.Website}
+
+The sales rep&apos;s goal for this outreach is: &quot;{!$Input:Outreach_Goal}&quot;.
+
+Your message MUST:
+1. Open with a personalized greeting that references the account by name.
+2. Connect the rep&apos;s goal to a plausible business value for this account&apos;s industry.
+3. Include a clear, low-pressure call to action and a short sign-off.
+
+Do NOT invent specific pricing, contract terms, customer names, metrics, or guarantees that were not provided. Do NOT use emoji.
+</content>
+        <inputs>
+            <apiName>Account</apiName>
+            <definition>SOBJECT://Account</definition>
+            <masterLabel>Account</masterLabel>
+            <referenceName>Input:Account</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>Outreach_Goal</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>Outreach Goal</masterLabel>
+            <referenceName>Input:Outreach_Goal</referenceName>
+            <required>true</required>
+        </inputs>
+        <isCitationEnabled>false</isCitationEnabled>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>Jkl9wl2fPDDEdG0kyx1e8XdqXhu0FaqaCCe+KMlU5Xo=_1</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>
