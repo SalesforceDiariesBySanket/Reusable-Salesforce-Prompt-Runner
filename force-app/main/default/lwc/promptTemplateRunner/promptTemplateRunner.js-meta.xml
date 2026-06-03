@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>66.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Prompt Template Runner</masterLabel>
+    <description>Shows a button that resolves a Prompt Builder template for the current record and displays the generated response.</description>
+    <targets>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <property
+                name="cardTitle"
+                type="String"
+                label="Card Title"
+                default="Account Summary"
+                description="Heading shown at the top of the card."
+            />
+            <property
+                name="helpText"
+                type="String"
+                label="Help Text"
+                default="Generate an AI summary of this record."
+                description="Short instruction shown before the response is generated."
+            />
+            <property
+                name="buttonLabel"
+                type="String"
+                label="Button Label"
+                default="Generate Summary"
+            />
+            <property
+                name="iconName"
+                type="String"
+                label="Card Icon"
+                default="standard:account"
+                description="SLDS icon name shown in the card header, e.g. standard:account."
+            />
+            <property
+                name="templateName"
+                type="String"
+                label="Prompt Template API Name"
+                default="Account_Summary"
+                required="true"
+                description="Developer name of the prompt template to resolve."
+            />
+            <property
+                name="inputParameterName"
+                type="String"
+                label="Template Input Name"
+                default="Input:Account"
+                description="Reference name of the record input the template expects, e.g. Input:Account."
+            />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

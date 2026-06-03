@@ -1,0 +1,14 @@
+.result-box {
+    min-height: 3rem;
+    border-radius: var(--slds-c-card-radius-border, 0.25rem);
+    line-height: 1.5;
+}
+
+.loading-pad {
+    padding: 1.25rem 0;
+}
+
+.result-box lightning-formatted-rich-text {
+    display: block;
+    overflow-wrap: anywhere;
+}

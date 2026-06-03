@@ -1,0 +1,65 @@
+<template>
+    <lightning-card title={cardTitle} icon-name={iconName}>
+        <div class="slds-var-p-horizontal_medium slds-var-p-bottom_medium">
+            <template lwc:if={showIntro}>
+                <p
+                    class="slds-text-body_regular slds-text-color_weak slds-var-m-bottom_small"
+                >
+                    {helpText}
+                </p>
+            </template>
+
+            <lightning-button
+                variant="brand"
+                label={buttonLabel}
+                icon-name="utility:einstein"
+                onclick={handleGenerate}
+                disabled={isLoading}
+            >
+            </lightning-button>
+
+            <template lwc:if={isLoading}>
+                <div
+                    class="slds-box slds-is-relative result-box slds-var-m-top_small"
+                >
+                    <lightning-spinner
+                        alternative-text="Generating response"
+                        size="small"
+                    >
+                    </lightning-spinner>
+                    <p
+                        class="slds-text-body_small slds-text-color_weak slds-align_absolute-center loading-pad"
+                    >
+                        Generating response&hellip;
+                    </p>
+                </div>
+            </template>
+
+            <template lwc:if={hasResult}>
+                <div class="slds-box result-box slds-var-m-top_small">
+                    <lightning-formatted-rich-text
+                        value={formattedResponse}
+                    >
+                    </lightning-formatted-rich-text>
+                </div>
+            </template>
+
+            <template lwc:if={hasError}>
+                <div
+                    class="slds-box slds-theme_error slds-var-m-top_small"
+                    role="alert"
+                >
+                    <lightning-icon
+                        icon-name="utility:error"
+                        variant="inverse"
+                        size="x-small"
+                        class="slds-var-m-right_x-small"
+                        alternative-text="Error"
+                    >
+                    </lightning-icon>
+                    {errorMessage}
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

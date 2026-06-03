@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplateActv xmlns="http://soap.sforce.com/2006/04/metadata">
+    <accessLevel>Allowed</accessLevel>
+    <developerName>summarizeAccountDefault</developerName>
+    <masterLabel>Account Summary</masterLabel>
+    <templateDeveloperName>einstein_gpt__summarizeAccountDefault</templateDeveloperName>
+</GenAiPromptTemplateActv>

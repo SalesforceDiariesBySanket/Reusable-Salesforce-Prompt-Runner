@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>66.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Flex Prompt Template Runner</masterLabel>
+    <description>Collects a free-text input, combines it with the current record, resolves a flex Prompt Builder template, and displays the generated response.</description>
+    <targets>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <property
+                name="cardTitle"
+                type="String"
+                label="Card Title"
+                default="Account Outreach Assistant"
+                description="Heading shown at the top of the card."
+            />
+            <property
+                name="helpText"
+                type="String"
+                label="Help Text"
+                default="Describe your outreach goal, then generate a tailored email grounded in this account."
+            />
+            <property
+                name="inputLabel"
+                type="String"
+                label="Input Label"
+                default="Outreach goal"
+                description="Label for the free-text field the user fills in."
+            />
+            <property
+                name="inputPlaceholder"
+                type="String"
+                label="Input Placeholder"
+                default="e.g. Introduce our onboarding services and request a 15-minute intro call"
+            />
+            <property
+                name="buttonLabel"
+                type="String"
+                label="Button Label"
+                default="Generate Email"
+            />
+            <property
+                name="iconName"
+                type="String"
+                label="Card Icon"
+                default="standard:email"
+                description="SLDS icon name shown in the card header, e.g. standard:email."
+            />
+            <property
+                name="templateName"
+                type="String"
+                label="Prompt Template API Name"
+                default="Draft_Account_Outreach"
+                required="true"
+                description="Developer name of the flex prompt template to resolve."
+            />
+            <property
+                name="recordInputName"
+                type="String"
+                label="Record Input Name"
+                default="Input:Account"
+                description="Reference name of the record input the template expects, e.g. Input:Account."
+            />
+            <property
+                name="freeTextInputName"
+                type="String"
+                label="Free-Text Input Name"
+                default="Input:Outreach_Goal"
+                description="Reference name of the free-text input the template expects, e.g. Input:Outreach_Goal."
+            />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>
